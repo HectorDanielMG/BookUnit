@@ -6,49 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
-    <div class="w-full">
-    <nav class="bg-white shadow-lg">
-        <div class="md:flex items-center justify-between py-2 px-8 md:px-12">
-            <div class="flex justify-between items-center">
-               <div class="text-6xl font-bold text-gray-800 md:text-7xl">
-                    <a href="#">BookUnit</a>
-               </div>
-                <div class="md:hidden">
-                    <button type="button" class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
-                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                            <path class="hidden" d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"/>
-                            <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-                        </svg>
-                    </button>
+<body class="h-screen overflow-hidden flex items-center justify-center bg-gray-200">
+    <!-- Contenedor principal más grande, ocupando toda la pantalla -->
+    <div class="w-full h-full">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-lg">
+            <div class="md:flex items-center justify-between py-4 px-8 md:px-12">
+                <div class="flex justify-between items-center">
+                    <!-- Contenedor que agrupa la imagen y el texto -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Imagen a la izquierda del texto -->
+                        <img src="../resource/Buho_Logo.png" alt="Logo Buho" class="h-16 w-16">
+                        <div class="text-6xl font-bold text-gray-800 md:text-7xl">
+                            <a href="#">BookUnit</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                                <path class="hidden" d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"/>
+                                <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row hidden md:block -mx-2">
+                    <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Home</a>
+                    <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">About</a>
+                    <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Contact</a>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row hidden md:block -mx-2">
-                <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Home</a>
-                <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">About</a>
-                <a href="#" class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <div class="flex bg-white" style="height:600px;">
-        <div class="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
-            <div>
-                <h2 class="text-5xl font-semibold text-gray-800 md:text-6xl">Bienvenido a tu <span class="text-indigo-600">Biblioteca Digital</span></h2>
-                <p class="mt-2 text-lg text-gray-500 md:text-xl">El conocimiento a un solo clic de distancia!</p>
-                <div class="flex justify-center lg:justify-start mt-6">
-                    <a class="px-6 py-4 bg-gray-900 text-gray-200 text-lg font-semibold rounded hover:bg-gray-800" href="#">Comenzar</a>
-                    <a class="mx-4 px-6 py-4 bg-gray-300 text-gray-900 text-lg font-semibold rounded hover:bg-gray-400" href="#">Saber más</a>
+        </nav>
+
+        <!-- Contenido principal que ocupa el resto de la pantalla -->
+        <div class="flex flex-col lg:flex-row h-full bg-white">
+            <!-- Sección de texto -->
+            <div class="flex flex-col justify-center items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
+                <div>
+                    <h2 class="text-5xl font-semibold text-gray-800 md:text-6xl">Bienvenido a tu <span class="text-indigo-600">Biblioteca Digital</span></h2>
+                    <p class="mt-2 text-lg text-gray-500 md:text-xl">¡El conocimiento a un solo clic de distancia!</p>
+                    <div class="flex justify-center lg:justify-start mt-6">
+                        <a class="px-6 py-4 bg-gray-900 text-gray-200 text-lg font-semibold rounded hover:bg-gray-800" href="#">Comenzar</a>
+                        <a class="mx-4 px-6 py-4 bg-gray-300 text-gray-900 text-lg font-semibold rounded hover:bg-gray-400" href="#">Saber más</a>
+                    </div>
                 </div>
             </div>
-        </div>
-<<<<<<< HEAD
-        <div class="hidden lg:block lg:w-1/2" style="clip-path:polygon(10% 0, 100% 0%, 100% 100%, 0 100%); background-image: url('../resource/Logo.jpeg'); background-size: contain; background-position: center; background-repeat: no-repeat;">
-=======
-        <div class="hidden lg:block lg:w-1/2" style="clip-path:polygon(10% 0, 100% 0%, 100% 100%, 0 100%); background-image: url('../resource/Logo_LP.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
->>>>>>> 4f0039c (Actualizacion al logo de Landing page)
-            <div class="h-full bg-black opacity-25"></div>
+            
+            <!-- Sección de imagen -->
+            <div class="hidden lg:block lg:w-1/2" style="background-image: url('../resource/Logo_LP.jpeg'); background-size: cover; background-position: center;">
+                <div class="h-full w-full bg-black opacity-25"></div>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
