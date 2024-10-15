@@ -2,32 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Sombra para que los textos y botones se destaquen sobre el fondo */
+        .text-shadow {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .button-shadow {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body class="h-screen overflow-hidden flex items-center justify-center bg-gray-200">
-    <!-- Contenedor principal más grande, ocupando toda la pantalla -->
-    <div class="w-full h-full">
-        <!-- Navbar -->
-        <nav class="bg-white shadow-lg">
+    <!-- Contenedor principal que ocupa toda la pantalla -->
+    <div class="relative w-full h-full">
+        <!-- Imagen de fondo cubriendo toda la pantalla -->
+        <div class="absolute top-0 left-0 w-full h-full bg-no-repeat bg-cover bg-center" style="background-image: url('../resource/Logo_LP.jpeg');"></div>
+
+        <!-- Navbar en la parte superior -->
+        <nav class="absolute top-0 left-0 w-full bg-white shadow-lg z-10">
             <div class="md:flex items-center justify-between py-4 px-8 md:px-12">
-                <div class="flex justify-between items-center">
-                    <!-- Contenedor que agrupa la imagen y el texto -->
-                    <div class="flex items-center space-x-4">
-                        <!-- Imagen del Búho más grande -->
-                        <img src="../resource/Buho_Logo.png" alt="Logo Buho" class="h-32 w-32"> <!-- Tamaño aumentado -->
-                        <div class="font-bold text-gray-800" style="font-size: 150px;"> <!-- Texto mucho más grande -->
-                            <a href="#">BookUnit</a>
-                        </div>
-                    </div>
-                    <div class="md:hidden">
-                        <button type="button" class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
-                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                                <path class="hidden" d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"/>
-                                <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-                            </svg>
-                        </button>
+                <!-- Contenedor que agrupa la imagen del Búho y el texto "BookUnit" uno al lado del otro -->
+                <div class="flex items-center">
+                    <!-- Imagen del Búho más grande -->
+                    <img src="../resource/Buho_Logo.png" alt="Logo Buho" class="h-20 w-20 mr-4"> <!-- Tamaño ajustado -->
+                    <!-- Texto mucho más grande -->
+                    <div class="font-bold text-gray-800 text-shadow" style="font-size: 60px;"> <!-- Tamaño aumentado -->
+                        <a href="#">BookUnit</a>
                     </div>
                 </div>
                 <div class="flex flex-col md:flex-row hidden md:block -mx-2">
@@ -38,23 +42,19 @@
             </div>
         </nav>
 
-        <!-- Contenido principal que ocupa el resto de la pantalla -->
-        <div class="flex flex-col lg:flex-row h-full bg-white">
-            <!-- Sección de texto -->
-            <div class="flex flex-col justify-center items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
-                <div>
-                    <h2 class="text-5xl font-semibold text-gray-800 md:text-6xl">Bienvenido a tu <span class="text-indigo-600">Biblioteca Digital</span></h2>
-                    <p class="mt-2 text-lg text-gray-500 md:text-xl">¡El conocimiento a un solo clic de distancia!</p>
-                    <div class="flex justify-center lg:justify-start mt-6">
-                        <a class="px-6 py-4 bg-gray-900 text-gray-200 text-lg font-semibold rounded hover:bg-gray-800" href="#">Comenzar</a>
-                        <a class="mx-4 px-6 py-4 bg-gray-300 text-gray-900 text-lg font-semibold rounded hover:bg-gray-400" href="#">Saber más</a>
-                    </div>
-                </div>
+        <!-- Contenido centrado encima de la imagen, ajustado más arriba -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center" style="top: 17%; left: 5%;">
+            <!-- Texto de bienvenida centrado con sombra, ajustado más arriba -->
+            <div class="text-shadow">
+                <h2 class="text-5xl font-semibold text-gray-800 md:text-6xl">Bienvenido a tu</h2>
+                <h2 class="text-5xl font-semibold text-indigo-600 md:text-6xl">Biblioteca Digital</h2>
+                <p class="mt-2 text-lg text-gray-500 md:text-xl">¡El conocimiento a un solo clic de distancia!</p>
             </div>
             
-            <!-- Sección de imagen con efecto de recorte -->
-            <div class="hidden lg:block lg:w-1/2" style="clip-path: polygon(15% 0, 100% 0%, 100% 100%, 0 100%); background-image: url('../resource/Logo_LP.jpeg'); background-size: 160% 100%; background-position: center; background-repeat: no-repeat;">
-                <div class="h-full w-full bg-black opacity-25"></div>
+            <!-- Botones centrados con sombra -->
+            <div class="flex justify-center mt-6">
+                <a class="px-6 py-4 bg-gray-900 text-gray-200 text-lg font-semibold rounded hover:bg-gray-800 button-shadow" href="#">Comenzar</a>
+                <a class="mx-4 px-6 py-4 bg-gray-300 text-gray-900 text-lg font-semibold rounded hover:bg-gray-400 button-shadow" href="#">Saber más</a>
             </div>
         </div>
     </div>
